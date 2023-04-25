@@ -1,5 +1,6 @@
 # Comentarios comienzan con símbolo gato # (numeral)
 .vscode
-
-# carpeta de ejecutables (Windows o Linux)
 bin/
+compile_flags.txt
+bin
+main.obj
