@@ -1,32 +1,37 @@
-#include<iostream>
-#include<string>
-#include"clases.hpp"
+#include <iostream>
+#include <string>
+#include "curso.hpp"
 
 void Curso::set_nombre_curso( std::string &_NombreCurso )
 {
-            curso_nombre = _NombreCurso;
+	// Traías identaciones bárbaras
+	curso_nombre = _NombreCurso;
 }
 
 void Curso::set_nombre_profesor(std::string &_NombreProfesor)
 {
-            nombre_profesor = _NombreProfesor;
+    nombre_profesor = _NombreProfesor;
 }
 
-void Curso::comparar_strings(std::string &_nombre_curso, int &_decision)
+void Curso::comparar_strings(std::string &_nombre_curso, int &_decision)/*{{{*/
 {
     std::cout << "INGRESE EL NOMBRE DEL CURSO: " ;
     std::getline(std::cin, _nombre_curso);
 
-    if (_nombre_curso.compare(curso_nombre) == 0)
-    {
+	// Aquí puedes símplemente usar el operador ==
+    if ( _nombre_curso == curso_nombre ) {
         std::cout << "EL NOMBRE EXISTE EN LA BASE DE DATOS ACCEDIENDO..." << '\n' <<'\n';
         std::cout << "EL NOMBRE DEL CURSO ES:" << get_nombre_curso() << std::endl;
         std::cout << "EL NOMBRE DEL PROFESOR ACARGO ES : "<< get_nombre_profesor();
+
+		// Este valor centinela se me hace medio gachón. El valor centinela está diseñado
+		// para el usuario. Autotrucarlo se me haría gacho, habría que buscar otra manera de
+		// romper el ciclo, y no SIMULAR UNA DESICIÓN del usuario. Se me hace como un goto
         _decision = 3; //sentinel-control
 
-    }else 
+    } else 
         std::cout << "NO EXISTE ESE NOMBRE EN LA BASE DE DATOS";
-}
+}/*}}}*/
 
 void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)
 {
@@ -40,23 +45,18 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
     std::cout<<"NOMBRE NUEVO DEL CURSO: ";
              std::getline(std::cin,_NombreMateria);
              set_nombre_curso(_NombreMateria);
-             
+
 }
 
-void Curso::demostracion( )
+void Curso::demostracion( )/*{{{*/
 {
-
-    
-    for( auto i = 0 ; i < alumnos_curso ; ++i)
-    {
-
-        for(auto j = 0 ; j < numero_examenes; ++j)
-        {
+	// Está bien el auto pero consume tiempo de compilación, si no es necesario evítalo
+    for( std::int32_t i = 0; i < alumnos_curso; ++i) {
+        for( std::int32_t j = 0 ; j < numero_examenes; ++j )
             std::cout << calificaciones_alumnos[j][i];
-        }
         std::cout <<'\n';
     }
-}
+}/*}}}*/
 
 /*void Curso::obtener_minimo( )const
 {

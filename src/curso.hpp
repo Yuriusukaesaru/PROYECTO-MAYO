@@ -1,5 +1,5 @@
-#ifndef CLASS_HPP
-#define CLASS_HPP
+#ifndef CURSO_HPP
+#define CURSO_HPP
 #include<string>
 #include<vector>
 
