@@ -43,6 +43,26 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
              
 }
 
+void Curso::demostracion( )
+{
+
+    
+    for( auto i = 0 ; i < alumnos_curso ; ++i)
+    {
+
+        for(auto j = 0 ; j < numero_examenes; ++j)
+        {
+            std::cout << calificaciones_alumnos[j][i];
+        }
+        std::cout <<'\n';
+    }
+}
+
+/*void Curso::obtener_minimo( )const
+{
+
+}*/
+
 std::string Curso::get_nombre_curso()const
 {
             return curso_nombre;

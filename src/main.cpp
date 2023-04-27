@@ -7,6 +7,14 @@ int main(void)
     Curso nombre_curso("CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO");
     std::string nombre_profesor,nombre_materia;
     int decision{ 0 };
+
+    /*std::vector<std::vector<int>>calificaciones_alumnos = {
+        {1,2,3},
+        {1,2,3},
+        {1,2,3}
+    };*/
+
+   nombre_curso.demostracion();
     
     do{
 
