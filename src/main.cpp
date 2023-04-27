@@ -1,21 +1,33 @@
 #include <iostream> // Separación entre #include y <librería> mi Yuri
 #include <string>
+#include<vector>
 #include "curso.hpp"
 
 int main(void)
 {
 	// nombre_curso no está chido como nombre de objeto.
 	// También cambiamos paréntesis por llaves
-    Curso curso{ "CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO" };
+
+	std::vector<std::vector<int>> notas {
+
+		{ 1, 2, 3},
+		{ 1, 2, 3},
+		{ 1, 2, 3},
+		{ 1, 2, 3},	
+		{ 1 ,2, 3},
+		{ 1, 2, 3},	
+		{ 1 ,2, 3},
+		{ 1, 2, 3},	
+		{ 1, 2, 3},
+		{ 1, 2, 3}
+	};
+    Curso curso{"CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO", notas};
+	
+		
     std::string nombre_profesor, nombre_materia;
 
     int decision{ 0 };
 
-    /*std::vector<std::vector<int>>calificaciones_alumnos = {
-        {1,2,3},
-        {1,2,3},
-        {1,2,3}
-    };*/
 
    curso.demostracion();
 
@@ -42,7 +54,7 @@ int main(void)
 				//
 				// En realidad lo ideal sería manipular la variable exito en este mismo case
 				// y no dentro de la función comparar_strings
-				exito = curso.comparar_strings( nombre_materia, decision );
+				exito = curso.comparar_strings( nombre_materia);
 				break;
             case 2: 
 				curso.cambiar_valores( nombre_profesor, nombre_materia );

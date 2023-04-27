@@ -1,7 +1,7 @@
 #CALIZ DEL MAKEFILE
 
 ifeq ($(OS), Windows_NT)
-EXT := exe
+EXT := .exe
 else ifeq ($(shell uname), Linux)
 EXT :=
 endif
