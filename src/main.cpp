@@ -19,6 +19,8 @@ int main(void)
 
    curso.demostracion();
 
+	bool exito{ false };
+
     do {
 
 		// La identación debe ser correcta dentro de do
@@ -30,11 +32,17 @@ int main(void)
 		std::cin >> decision;
 		std::cin.ignore( );
 
+
         switch ( decision )
         {
 			// Identa el cuerpo de tus cases
             case 1 :
-				curso.comparar_strings( nombre_materia, decision );
+				// Le metimos un return a comparar_strings. puedes quitárselo, símplement es
+				// un ejemplo de como puedes manipular ciclos extérnamente.
+				//
+				// En realidad lo ideal sería manipular la variable exito en este mismo case
+				// y no dentro de la función comparar_strings
+				exito = curso.comparar_strings( nombre_materia, decision );
 				break;
             case 2: 
 				curso.cambiar_valores( nombre_profesor, nombre_materia );
@@ -45,6 +53,6 @@ int main(void)
             default:
                 std::cout << "OPCION NO VALIDA"; 
         }
-    }while (decision != 3);
+    } while ( decision != 3 and exito == false );
 
 }

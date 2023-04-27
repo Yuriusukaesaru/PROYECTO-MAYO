@@ -10,7 +10,7 @@ class Curso{
         {}
         void set_nombre_curso( std::string & );
         void set_nombre_profesor( std::string & );
-        void comparar_strings( std::string &, int & );
+        bool comparar_strings( std::string &, int & );
         void cambiar_valores( std::string &, std::string & );
         //void obtener_maximo() const;
         //void obtener_minimo() const;

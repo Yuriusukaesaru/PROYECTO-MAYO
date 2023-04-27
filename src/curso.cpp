@@ -13,7 +13,7 @@ void Curso::set_nombre_profesor(std::string &_NombreProfesor)
     nombre_profesor = _NombreProfesor;
 }
 
-void Curso::comparar_strings(std::string &_nombre_curso, int &_decision)/*{{{*/
+bool Curso::comparar_strings(std::string &_nombre_curso, int &_decision)/*{{{*/
 {
     std::cout << "INGRESE EL NOMBRE DEL CURSO: " ;
     std::getline(std::cin, _nombre_curso);
@@ -27,10 +27,13 @@ void Curso::comparar_strings(std::string &_nombre_curso, int &_decision)/*{{{*/
 		// Este valor centinela se me hace medio gachón. El valor centinela está diseñado
 		// para el usuario. Autotrucarlo se me haría gacho, habría que buscar otra manera de
 		// romper el ciclo, y no SIMULAR UNA DESICIÓN del usuario. Se me hace como un goto
-        _decision = 3; //sentinel-control
+        return true; //sentinel-control
 
-    } else 
+    } else {
         std::cout << "NO EXISTE ESE NOMBRE EN LA BASE DE DATOS";
+		return false;
+	}
+
 }/*}}}*/
 
 void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)
