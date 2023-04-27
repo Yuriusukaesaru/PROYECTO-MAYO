@@ -1,5 +1,5 @@
-#ifndef CLASS_HPP
-#define CLASS_HPP
+#ifndef CURSO_HPP
+#define CURSO_HPP
 #include<string>
 #include<vector>
 
@@ -10,7 +10,7 @@ class Curso{
         {}
         void set_nombre_curso( std::string & );
         void set_nombre_profesor( std::string & );
-        void comparar_strings( std::string &, int & );
+        bool comparar_strings( std::string &, int & );
         void cambiar_valores( std::string &, std::string & );
         //void obtener_maximo() const;
         //void obtener_minimo() const;
