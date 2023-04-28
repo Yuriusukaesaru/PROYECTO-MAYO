@@ -36,7 +36,7 @@ bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
 
 }/*}}}*/
 
-void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)
+void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)/*{{{*/
 {
     std::cout<<"ESTOS SON LOS DATOS: " 
              <<"NOMBRE DEL CURSO: " << get_nombre_curso() << '\n'
@@ -49,7 +49,7 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
              std::getline(std::cin,_NombreMateria);
              set_nombre_curso(_NombreMateria);
 
-}
+}/*}}}*/
 
 void Curso::demostracion( )/*{{{*/
 {

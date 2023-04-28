@@ -11,8 +11,8 @@ all: bin bin/prog.exe
 bin:
 	mkdir bin
 
-bin/prog.exe: src/main.cpp src/curso.cpp
-	clang++ -Wall -Wextra -Wpedantic -Werror \
+bin/prog.exe: src/main.cpp src/curso.cpp src/curso.hpp
+	clang++ -g -Wall -Wextra -Wpedantic -Werror \
 			-std=c++20 src/main.cpp src/curso.cpp -o bin/prog$(EXT)
 
 .PHONY: clean
