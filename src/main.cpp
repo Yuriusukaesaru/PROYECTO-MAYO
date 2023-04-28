@@ -7,7 +7,6 @@ int main(void)
 {
     Curso curso{ "CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO" };
 	
-		
     std::string nombre_profesor, nombre_materia;
 
     int decision{ 0 };

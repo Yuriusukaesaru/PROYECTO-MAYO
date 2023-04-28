@@ -22,8 +22,8 @@ class Curso{
 
     private:
         std::string curso_nombre,nombre_profesor;
-		std::vector<std::vector<int>> calificaciones_alumnos
-			{ { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
+		std::vector<std::vector<std::int32_t>> calificaciones_alumnos
+			{ { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 },
 			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
 			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
 
