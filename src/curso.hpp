@@ -5,8 +5,8 @@
 
 class Curso{
     public: 
-        Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor,
-				std::vector<std::vector<int>> &_Notas);
+		// Versión sin enviar vector
+        Curso( const std::string &_CursoNombre , const std::string &_NombreProfesor );
         void set_nombre_curso( std::string & );
         void set_nombre_profesor( std::string & );
         bool comparar_strings( std::string &);
@@ -22,9 +22,11 @@ class Curso{
 
     private:
         std::string curso_nombre,nombre_profesor;
-        std::vector<std::vector<int>>calificaciones_alumnos{alumnos_curso, std:: vector <int> (numero_examenes)};
-        
-    
+		std::vector<std::vector<int>> calificaciones_alumnos
+			{ { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
+			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
+			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+
 };
 
 #endif

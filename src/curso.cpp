@@ -2,9 +2,8 @@
 #include <string>
 #include "curso.hpp"
 
-Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor,
-				std::vector<std::vector<int>> &_Notas) :
-	curso_nombre( _CursoNombre ) , nombre_profesor( _NombreProfesor ), calificaciones_alumnos(_Notas)
+Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor ) :
+	curso_nombre{ _CursoNombre }, nombre_profesor{ _NombreProfesor }
 {}
 
 void Curso::set_nombre_curso( std::string &_NombreCurso )

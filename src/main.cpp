@@ -5,23 +5,7 @@
 
 int main(void)
 {
-	// nombre_curso no está chido como nombre de objeto.
-	// También cambiamos paréntesis por llaves
-
-	std::vector<std::vector<int>> notas {
-
-		{ 1, 2, 3},
-		{ 1, 2, 3},
-		{ 1, 2, 3},
-		{ 1, 2, 3},	
-		{ 1 ,2, 3},
-		{ 1, 2, 3},	
-		{ 1 ,2, 3},
-		{ 1, 2, 3},	
-		{ 1, 2, 3},
-		{ 1, 2, 3}
-	};
-    Curso curso{"CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO", notas};
+    Curso curso{ "CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO" };
 	
 		
     std::string nombre_profesor, nombre_materia;
