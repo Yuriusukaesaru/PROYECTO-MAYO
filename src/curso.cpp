@@ -2,6 +2,10 @@
 #include <string>
 #include "curso.hpp"
 
+Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor ) :
+	curso_nombre{ _CursoNombre }, nombre_profesor{ _NombreProfesor }
+{}
+
 void Curso::set_nombre_curso( std::string &_NombreCurso )
 {
 	// Traías identaciones bárbaras
