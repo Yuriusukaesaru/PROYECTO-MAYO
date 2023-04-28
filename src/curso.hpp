@@ -5,9 +5,8 @@
 
 class Curso{
     public: 
-        Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor, std::vector<std::vector<int>> &_Notas)
-        : curso_nombre( _CursoNombre ) , nombre_profesor( _NombreProfesor ), calificaciones_alumnos(_Notas)
-        {}
+        Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor,
+				std::vector<std::vector<int>> &_Notas);
         void set_nombre_curso( std::string & );
         void set_nombre_profesor( std::string & );
         bool comparar_strings( std::string &);

@@ -2,6 +2,11 @@
 #include <string>
 #include "curso.hpp"
 
+Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor,
+				std::vector<std::vector<int>> &_Notas) :
+	curso_nombre( _CursoNombre ) , nombre_profesor( _NombreProfesor ), calificaciones_alumnos(_Notas)
+{}
+
 void Curso::set_nombre_curso( std::string &_NombreCurso )
 {
 	// Traías identaciones bárbaras
