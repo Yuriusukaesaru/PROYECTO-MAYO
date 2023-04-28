@@ -60,7 +60,7 @@ void Curso::demostracion( )/*{{{*/
 	// Está bien el auto pero consume tiempo de compilación, si no es necesario evítalo
     for( std::int32_t i = 0; i < alumnos_curso; ++i) {
         for( std::int32_t j = 0 ; j < numero_examenes; ++j )
-            std::cout << calificaciones_alumnos[j][i];
+            std::cout << calificaciones_alumnos[i][j];
         std::cout <<'\n';
     }
 }/*}}}*/
