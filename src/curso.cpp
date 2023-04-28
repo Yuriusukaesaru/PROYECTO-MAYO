@@ -13,7 +13,7 @@ void Curso::set_nombre_profesor(std::string &_NombreProfesor)
     nombre_profesor = _NombreProfesor;
 }
 
-bool Curso::comparar_strings(std::string &_nombre_curso, int &_decision)/*{{{*/
+bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
 {
     std::cout << "INGRESE EL NOMBRE DEL CURSO: " ;
     std::getline(std::cin, _nombre_curso);
