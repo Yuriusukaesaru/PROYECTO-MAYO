@@ -22,15 +22,12 @@ bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
     std::cout << "INGRESE EL NOMBRE DEL CURSO: " ;
     std::getline(std::cin, _nombre_curso);
 
-	// Aquí puedes símplemente usar el operador ==
+	
     if ( _nombre_curso == curso_nombre ) {
         std::cout << "EL NOMBRE EXISTE EN LA BASE DE DATOS ACCEDIENDO..." << '\n' <<'\n';
         std::cout << "EL NOMBRE DEL CURSO ES:" << get_nombre_curso() << std::endl;
         std::cout << "EL NOMBRE DEL PROFESOR ACARGO ES : "<< get_nombre_profesor();
 
-		// Este valor centinela se me hace medio gachón. El valor centinela está diseñado
-		// para el usuario. Autotrucarlo se me haría gacho, habría que buscar otra manera de
-		// romper el ciclo, y no SIMULAR UNA DESICIÓN del usuario. Se me hace como un goto
         return true; //sentinel-control
 
     } else {
@@ -55,15 +52,27 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
 
 }/*}}}*/
 
-void Curso::demostracion( )/*{{{*/
+/*void Curso::demostracion( )
 {
-	// Está bien el auto pero consume tiempo de compilación, si no es necesario evítalo
+	
     for( std::int32_t i = 0; i < alumnos_curso; ++i) {
         for( std::int32_t j = 0 ; j < numero_examenes; ++j )
-            std::cout << calificaciones_alumnos[j][i];
+            std::cout << calificaciones_alumnos[i][j];
         std::cout <<'\n';
     }
-}/*}}}*/
+}*/
+
+void Curso::show_values()
+{
+   for (const auto &student : table){
+   std::cout <<student.name  << ":";
+   for (int grade : student.grades)
+   {
+    std::cout <<grade << " ";
+   }
+    std::cout << std::endl;
+   }
+}
 
 /*void Curso::obtener_minimo( )const
 {

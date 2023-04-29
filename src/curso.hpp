@@ -2,6 +2,7 @@
 #define CURSO_HPP
 #include<string>
 #include<vector>
+#include<array>
 
 class Curso{
     public: 
@@ -13,20 +14,31 @@ class Curso{
         void cambiar_valores( std::string &, std::string & );
         //void obtener_maximo() const;
         //void obtener_minimo() const;
-        void demostracion();
+        //void demostracion();
+        void show_values( );
+
+        void add_student(const struct _AddInformation &s ){
+            table.push_back(s);
+        }
         std::string get_nombre_curso( )const;
         std::string get_nombre_profesor( )const;
-        static const int alumnos_curso {10} ;
-        static const int numero_examenes {3} ;
+       
+
+        struct Student{
+            std::string name;
+            std::array<int32_t,3> grades;
+        };
 
 
     private:
         std::string curso_nombre,nombre_profesor;
-		std::vector<std::vector<int>> calificaciones_alumnos
-			{ { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
-			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
-			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+        //static int alumnos_curso;
+        //static int numero_examenes;
+		//std::vector<Student>table;
+        std::vector<std::vector<Curso::Student>> table;
 
 };
+
+
 
 #endif

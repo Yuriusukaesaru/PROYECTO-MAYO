@@ -1,6 +1,6 @@
 #include <iostream> // Separación entre #include y <librería> mi Yuri
 #include <string>
-#include<vector>
+#include <vector>
 #include "curso.hpp"
 
 int main(void)
@@ -13,7 +13,15 @@ int main(void)
     int decision{ 0 };
 
 
-   curso.demostracion();
+    Curso::Student s1= {"Alicia",{90,60,90}};
+	Curso::Student s2= {"Ana",{100,100,90}};
+	Curso::Student s3= {"Alie",{90,90,100}};
+
+	curso.add_student(s1);
+	curso.add_student(s2);
+	curso.add_student(s3);
+
+	curso.show_values();
 
 	bool exito{ false };
 
@@ -23,7 +31,8 @@ int main(void)
 		std::cout << "\nBIENVENIDO ESTAS SON LAS OPCIONES: " << '\n'
 				  << "1.- BUSCAR EL NOMBRE DEL CURSO" << '\n'
 				  << "2.- CAMBIAR VALORES " << '\n'
-				  << "3.- SALIR" << '\n'
+				  << "3.- AGREGAR CALIFICACIONES DEL ALUMNO "
+				  << "4.- SALIR" << '\n'
 				  <<"OPCION :";
 		std::cin >> decision;
 		std::cin.ignore( );
@@ -49,6 +58,6 @@ int main(void)
             default:
                 std::cout << "OPCION NO VALIDA"; 
         }
-    } while ( decision != 3 and exito == false );
+    } while ( decision != 4 and exito == false );
 
 }
