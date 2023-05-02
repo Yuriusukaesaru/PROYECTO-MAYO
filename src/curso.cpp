@@ -62,6 +62,9 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
     }
 }*/
 
+//*************OJOOOOOO
+//AQUI SEGUN CHAT GPT ESTO ES CORRECTO PARA DESPLEGAR LOS DATOS
+//ALMACENADOS EN EL VECTOR
 void Curso::show_values()
 {
    for (const auto &student : table){

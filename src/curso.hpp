@@ -16,8 +16,11 @@ class Curso{
         //void obtener_minimo() const;
         //void demostracion();
         void show_values( );
-
-        void add_student(const struct _AddInformation &s ){
+        /******* AQUI HERMANO ES LA FUNCION SET PARA AGREGAR AL ESTUDIANTE...
+         AQUI LA VARIABLE ES TIPO REFENCIA Y LO QUE ESTA ALMACENADO EN ESE VALOR 
+         DE MEMORIA LO AGREGO AL NESTED VECTOR CON LA FUNCION .pushback()
+        */
+        void add_student(const struct _AddInformation &_s ){
             table.push_back(s);
         }
         std::string get_nombre_curso( )const;
@@ -32,10 +35,17 @@ class Curso{
 
     private:
         std::string curso_nombre,nombre_profesor;
+<<<<<<< HEAD
         //static int alumnos_curso;
         //static int numero_examenes;
 		//std::vector<Student>table;
         std::vector<std::vector<Curso::Student>> table;
+=======
+		std::vector<std::vector<std::int32_t>> calificaciones_alumnos
+			{ { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 },
+			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } ,
+			  { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+>>>>>>> 2ae3a1eca20652fc15e2f9fb8aa81e4c1248a3b4
 
 };
 

@@ -7,20 +7,23 @@ int main(void)
 {
     Curso curso{ "CURSO DE PENDEJOS .L.","FELIPE TOVARES CANCINO" };
 	
-		
     std::string nombre_profesor, nombre_materia;
 
     int decision{ 0 };
 
-
+	//AQUI CREO ESTOS VARIABLES TIPO STRUCTS Y LOS INICIALIZO CON EL NOMBRE Y LAS 3 NOTAS
+	//EL STRUCT SE LLAMA Student
     Curso::Student s1= {"Alicia",{90,60,90}};
 	Curso::Student s2= {"Ana",{100,100,90}};
 	Curso::Student s3= {"Alie",{90,90,100}};
 
+	//AHORA LO PASO COMO PARAMETRO LAS VARIABLES TIPO STRUCT MEDIANTE LA FUNCION 
+	//CORRESPONDIENTE PARA QUE SE AGREGUE AL NESTED VECTOR 2D
 	curso.add_student(s1);
 	curso.add_student(s2);
 	curso.add_student(s3);
 
+	//AHORA SIMPLEMENTE DESPLIEGO PARA COMPROBAR SI SE REALIZO CORRECTAMENTE
 	curso.show_values();
 
 	bool exito{ false };
