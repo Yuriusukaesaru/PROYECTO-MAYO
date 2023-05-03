@@ -6,16 +6,16 @@ Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfeso
 	curso_nombre{ _CursoNombre }, nombre_profesor{ _NombreProfesor }
 {}
 
-void Curso::set_nombre_curso( std::string &_NombreCurso )
+void Curso::set_nombre_curso( std::string &_NombreCurso )/*{{{*/
 {
 	// Traías identaciones bárbaras
 	curso_nombre = _NombreCurso;
-}
+}/*}}}*/
 
-void Curso::set_nombre_profesor(std::string &_NombreProfesor)
+void Curso::set_nombre_profesor(std::string &_NombreProfesor)/*{{{*/
 {
     nombre_profesor = _NombreProfesor;
-}
+}/*}}}*/
 
 bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
 {
@@ -52,7 +52,7 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
 
 }/*}}}*/
 
-/*void Curso::demostracion( )
+/*void Curso::demostracion( ){{{
 {
 	
     for( std::int32_t i = 0; i < alumnos_curso; ++i) {
@@ -60,12 +60,12 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
             std::cout << calificaciones_alumnos[i][j];
         std::cout <<'\n';
     }
-}*/
+}*//*}}}*/
 
 //*************OJOOOOOO
 //AQUI SEGUN CHAT GPT ESTO ES CORRECTO PARA DESPLEGAR LOS DATOS
 //ALMACENADOS EN EL VECTOR
-void Curso::show_values()
+void Curso::show_values()/*{{{*/
 {
    for (const auto &student : table){
    std::cout <<student.name  << ":";
@@ -75,19 +75,19 @@ void Curso::show_values()
    }
     std::cout << std::endl;
    }
-}
+}/*}}}*/
 
-/*void Curso::obtener_minimo( )const
+/*void Curso::obtener_minimo( )const{{{
 {
 
-}*/
+}*//*}}}*/
 
-std::string Curso::get_nombre_curso()const
+std::string Curso::get_nombre_curso()const/*{{{*/
 {
             return curso_nombre;
-}
+}/*}}}*/
 
-std::string Curso::get_nombre_profesor()const
+std::string Curso::get_nombre_profesor()const/*{{{*/
 {
             return nombre_profesor;
-}
+}/*}}}*/

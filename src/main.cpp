@@ -11,17 +11,17 @@ int main(void)
 
     int decision{ 0 };
 
-	//AQUI CREO ESTOS VARIABLES TIPO STRUCTS Y LOS INICIALIZO CON EL NOMBRE Y LAS 3 NOTAS
-	//EL STRUCT SE LLAMA Student
-    Curso::Student s1= {"Alicia",{90,60,90}};
-	Curso::Student s2= {"Ana",{100,100,90}};
-	Curso::Student s3= {"Alie",{90,90,100}};
+	/* No tiene caso crear 3 struct temporales cuando pudiéramos pasarlo diréctamete,
+	 * sin embargo vamos a intentarlo primero a tu modo.
+	 *
+	 * Por lo pronto necesito espacios, harmano, espacios entre operadores */
+    Curso::Student s1 = { "Alicia", {90, 60, 90} };
+	Curso::Student s2 = { "Ana", {100, 100, 90} };
+	Curso::Student s3 = { "Alie", {90, 90, 100} };
 
-	//AHORA LO PASO COMO PARAMETRO LAS VARIABLES TIPO STRUCT MEDIANTE LA FUNCION 
-	//CORRESPONDIENTE PARA QUE SE AGREGUE AL NESTED VECTOR 2D
-	curso.add_student(s1);
-	curso.add_student(s2);
-	curso.add_student(s3);
+	curso.add_student( s1 );
+	curso.add_student( s2 );
+	curso.add_student( s3 );
 
 	//AHORA SIMPLEMENTE DESPLIEGO PARA COMPROBAR SI SE REALIZO CORRECTAMENTE
 	curso.show_values();
