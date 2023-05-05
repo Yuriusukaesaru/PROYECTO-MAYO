@@ -1,23 +1,26 @@
 #include <iostream>
 #include <string>
+#include <array>
+#include <iomanip>
 #include "curso.hpp"
 
 Curso::Curso(const std::string &_CursoNombre , const std::string &_NombreProfesor ) :
 	curso_nombre{ _CursoNombre }, nombre_profesor{ _NombreProfesor }
 {}
 
-void Curso::set_nombre_curso( std::string &_NombreCurso )/*{{{*/
-{
-	// Traías identaciones bárbaras
-	curso_nombre = _NombreCurso;
-}/*}}}*/
 
-void Curso::set_nombre_profesor(std::string &_NombreProfesor)/*{{{*/
+void Curso::set_nombre_curso( std::string &_NombreCurso )
+{
+	
+	curso_nombre = _NombreCurso;
+}
+
+void Curso::set_nombre_profesor(std::string &_NombreProfesor)
 {
     nombre_profesor = _NombreProfesor;
-}/*}}}*/
+}
 
-bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
+bool Curso::comparar_strings(std::string &_nombre_curso)
 {
     std::cout << "INGRESE EL NOMBRE DEL CURSO: " ;
     std::getline(std::cin, _nombre_curso);
@@ -35,9 +38,9 @@ bool Curso::comparar_strings(std::string &_nombre_curso)/*{{{*/
 		return false;
 	}
 
-}/*}}}*/
+}
 
-void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)/*{{{*/
+void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMateria)
 {
     std::cout<<"ESTOS SON LOS DATOS: " 
              <<"NOMBRE DEL CURSO: " << get_nombre_curso() << '\n'
@@ -50,44 +53,81 @@ void Curso::cambiar_valores(std::string &_NombreCambio, std::string &_NombreMate
              std::getline(std::cin,_NombreMateria);
              set_nombre_curso(_NombreMateria);
 
-}/*}}}*/
+}
 
-/*void Curso::demostracion( ){{{
+void Curso::procesar_calificaciones()const
 {
-	
-    for( std::int32_t i = 0; i < alumnos_curso; ++i) {
-        for( std::int32_t j = 0 ; j < numero_examenes; ++j )
-            std::cout << calificaciones_alumnos[i][j];
-        std::cout <<'\n';
-    }
-}*//*}}}*/
+    std::cout << "\n\tESTAS SON LAS CALIFICACIONES" << '\n'
+              << "ESTUDIANTE" << "\tCALIF 1" <<"\tCALIF 2"
+              "\tCALIF 3" << "\t PROMEDIO" << '\n';
+        show_values( );
 
-//*************OJOOOOOO
-//AQUI SEGUN CHAT GPT ESTO ES CORRECTO PARA DESPLEGAR LOS DATOS
-//ALMACENADOS EN EL VECTOR
-void Curso::show_values()/*{{{*/
+    std::cout << std::setw(9) << "\nESTOS ES EL MAXIMO: " << obtener_max() 
+              << "\nESTOS SON LOS MINIMOS " << obtener_min();
+}
+
+
+void Curso::add_student(const struct Student &_s )
 {
+			table.push_back( _s );
+}
+
+void Curso::show_values()const
+{
+
+   double sum{ 0 };
+   int i = 0;
+
    for (const auto &student : table){
-   std::cout <<student.name  << ":";
+
+   std::cout << std::setw(9)<< student.name  << ":";
    for (int grade : student.grades)
    {
-    std::cout <<grade << " ";
+    sum += grade;
+    std::cout << std::setw(9) << grade << " " << std::setw(9); 
+    ++i;
    }
+    std::cout << sum / i;
+    i = 0;
+    sum = 0;
     std::cout << std::endl;
    }
-}/*}}}*/
+}
 
-/*void Curso::obtener_minimo( )const{{{
+int Curso::obtener_min( )const
 {
+     int calif_min{ 100 }; //establecemos esa nota minima 
+        for( auto &estudiante : table )
+        {
+            for ( int calificacion : estudiante.grades)
+            {
+                if ( calificacion < calif_min)
+                    calif_min = calificacion;
+            }
+        }
+    return calif_min;
+}
 
-}*//*}}}*/
+int Curso::obtener_max( )const
+{
+     int calif_max{ 0 }; //establecemos esa nota max
+        for( auto &estudiante : table )
+        {
+            for ( int calificacion : estudiante.grades)
+            {
+                if ( calificacion > calif_max)
+                    calif_max = calificacion;
+            }
+        }
+    return calif_max;
+}
 
-std::string Curso::get_nombre_curso()const/*{{{*/
+std::string Curso::get_nombre_curso()const
 {
             return curso_nombre;
-}/*}}}*/
+}
 
-std::string Curso::get_nombre_profesor()const/*{{{*/
+std::string Curso::get_nombre_profesor()const
 {
             return nombre_profesor;
-}/*}}}*/
+}
